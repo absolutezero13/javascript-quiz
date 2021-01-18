@@ -54,6 +54,9 @@ h1 {
 .start-button:active {
   transform: translate(5%);
 }
+button:focus {
+  outline: none;
+}
 .question-container {
   color: white;
   display: flex;
