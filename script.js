@@ -85,7 +85,7 @@ const firstStart = () => {
         `<div class="container">
       <h1>
        YOU GOT ${score} OUT OF ${questions.length + 1} ! ${
-          score > (7 / 10) * questions.length
+          score > (7 / 10) * (questions.length + 1)
             ? "YOU ARE GREAT!"
             : score > (4 / 10) * (questions.length + 1)
             ? "YOU ARE.. MEH.."

@@ -1,6 +1,6 @@
 "use strict";
 export const questions = [
-  "How do you make the function waits for one and a half second before its execution?",
+  "How do you make the function wait for one and a half seconds before its execution?",
   "Which is the correct way of choosing an element by their class name?",
   "You are given an array filled with letters. Which method chain gives you the exact same array?",
   "Which statement returns true?",
