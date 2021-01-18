@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Source Code Pro", monospace;
+  background: rgba(0, 0, 0, 0.685);
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+h1 {
+  text-align: center;
+}
+.question-tag {
+  background: #323330;
+  padding: 0.5rem;
+  border: 1px solid #323330;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.container {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15rem 0 0 0;
+  animation: come-out 1s forwards;
+}
+.start-button {
+  font-family: "Source Code Pro", monospace;
+  font-weight: 700;
+  width: auto;
+  height: auto;
+  font-size: 1.6rem;
+  color: #323330;
+  background: rgb(240, 219, 79);
+  margin: 2rem;
+  cursor: pointer;
+  border-bottom: 5px solid rgb(211, 191, 59);
+  border-left: 5px solid rgb(211, 191, 59);
+  border-right: 5px solid rgb(211, 191, 59);
+  border-top: 1px solid rgb(211, 191, 59);
+  transition: all 0.3s ease;
+  border-radius: 10px;
+}
+.start-button:hover {
+  color: rgb(240, 219, 79);
+  background: #323330;
+  border: 5px solid #323330;
+}
+.start-button:active {
+  transform: translate(5%);
+}
+.question-container {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5rem 0 0 0;
+  line-height: 3rem;
+  font-size: 1.1rem;
+  animation: come-out 1s forwards;
+}
+.question {
+  margin: 0 0 3% 0;
+  text-align: center;
+}
+.choices {
+  flex-direction: column;
+}
+.choice {
+  cursor: pointer;
+  padding: 0 10px 0 10px;
+  margin-bottom: 10%;
+  background: rgba(0, 0, 0, 0.432);
+  border: 1px solid black;
+  border-radius: 12px;
+  box-shadow: 1px 1px 6px black;
+  transition: all 0.5s ease;
+  text-align: center;
+}
+.choice:hover {
+  background: rgba(0, 0, 0, 0.232);
+}
+.choice:active {
+  background: rgba(240, 218, 79, 0.229);
+  transform: translate(5%);
+}
+.choice-align-left {
+  text-align: left;
+}
+
+.next-button {
+  padding: 1%;
+  font-size: 1.5rem;
+  height: auto;
+  font-family: "Source Code Pro", monospace;
+  color: white;
+  cursor: pointer;
+  margin-right: 15%;
+  background: rgba(0, 0, 0, 0.432);
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 1px 1px 6px black;
+  align-self: flex-end;
+  display: none;
+  transition: all 0.5s ease;
+}
+.next-button:hover {
+  background: rgba(0, 0, 0, 0.232);
+}
+.next-button:active {
+  transform: translate(5%);
+}
+.end-button {
+  height: auto;
+  width: auto;
+}
+@keyframes hidden {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    display: none;
+    opacity: 0;
+  }
+}
+@keyframes come-out {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 70%;
+  }
+  .start-button,
+  .end-button,
+  .next-button {
+    font-size: 1rem;
+  }
+  .question-container {
+    margin-top: 3rem;
+    line-height: 2rem;
+  }
+  .choice {
+    font-size: 0.7rem;
+  }
+  .question {
+    font-size: 1rem;
+  }
+}
+@media only screen and (max-width: 330px) {
+  .question-container {
+    margin-top: 2rem;
+  }
+}
