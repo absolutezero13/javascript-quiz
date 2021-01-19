@@ -99,14 +99,19 @@ const firstStart = () => {
     }
 
     choice.forEach((e) => (e.style.background = "rgba(0, 0, 0, 0.432)"));
-    questionTag.innerHTML = `QUESTION ${questionNumber + 2}`;
-    question.innerHTML = questions[questionNumber];
-    optionA.innerHTML = answers[questionNumber][0];
-    optionB.innerHTML = answers[questionNumber][1];
-    optionC.innerHTML = answers[questionNumber][2];
-    optionD.innerHTML = answers[questionNumber][3];
-    questionNumber++;
-    nextButton.style.display = "none";
+
+    const displayQuestion = () => {
+      questionTag.innerHTML = `QUESTION ${questionNumber + 2}`;
+      question.innerHTML = questions[questionNumber];
+      optionA.innerHTML = answers[questionNumber][0];
+      optionB.innerHTML = answers[questionNumber][1];
+      optionC.innerHTML = answers[questionNumber][2];
+      optionD.innerHTML = answers[questionNumber][3];
+      questionNumber++;
+      nextButton.style.display = "none";
+    };
+    setTimeout(displayQuestion, 301);
+
     choice.forEach(function (e) {
       e.addEventListener("click", answering);
     });

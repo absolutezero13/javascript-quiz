@@ -82,7 +82,7 @@ button:focus {
   border: 1px solid black;
   border-radius: 12px;
   box-shadow: 1px 1px 6px black;
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
   text-align: center;
 }
 .choice:hover {
