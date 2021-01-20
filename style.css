@@ -77,7 +77,7 @@ button:focus {
 .choice {
   cursor: pointer;
   padding: 0 10px 0 10px;
-  margin-bottom: 7%;
+  margin-bottom: 1rem;
   background: rgba(0, 0, 0, 0.432);
   border: 1px solid black;
   border-radius: 12px;
@@ -164,5 +164,16 @@ button:focus {
 @media only screen and (max-width: 330px) {
   .question-container {
     margin-top: 2rem;
+  }
+}
+@media only screen and (max-width: 280px) {
+  .choice {
+    font-size: 0.5rem;
+  }
+  .question {
+    font-size: 0.7rem;
+  }
+  .question-tag {
+    font-size: 1rem;
   }
 }
