@@ -62,8 +62,8 @@ button:focus {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 3.5rem 0 0 0;
-  line-height: 3rem;
+  margin: 3rem 0 0 0;
+  line-height: 2.8rem;
   font-size: 1.1rem;
   animation: come-out 1s forwards;
 }
