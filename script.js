@@ -53,6 +53,29 @@ const firstStart = () => {
   //---- TIMER ---- //
   let minutes = 10;
   let seconds = 0;
+  const displayEndingPage = () => {
+    questionContainer.remove();
+    countDown.remove();
+    main.insertAdjacentHTML(
+      "afterbegin",
+      `<div class="container">
+    <h1>
+     YOU GOT <span class="score"> ${score} </span> OUT OF ${
+        questions.length + 1
+      } ! ${
+        score > (7 / 10) * (questions.length + 1)
+          ? "YOU ARE GREAT!"
+          : score > (4 / 10) * (questions.length + 1)
+          ? "YOU ARE.. MEH.."
+          : "YOU SUCK!"
+      }
+    </h1>
+   <a href="index.html"> <button class="end-button start-button">BACK TO THE MAIN PAGE</button> <a/>
+  </div>`
+    );
+    return;
+  };
+
   const timer = () => {
     minute.innerHTML = `${minutes.toString().padStart(2, 0)}`;
     second.innerHTML = `:${seconds.toString().padStart(2, 0)}`;
@@ -66,9 +89,13 @@ const firstStart = () => {
       minute.style.color = "red";
       second.style.color = "red";
     }
+    if (minutes === -1 && second.innerHTML === ":00") {
+      displayEndingPage();
+    }
   };
   timer();
-  setInterval(timer, 1000);
+  const timerCountDown = () => setInterval(timer, 1000);
+  timerCountDown();
 
   const answering = function (element) {
     nextButton.style.animation = "come-out 0.5s ease";
@@ -102,27 +129,9 @@ const firstStart = () => {
   });
   nextButton.addEventListener("click", () => {
     if (questionNumber === questions.length - 1) {
-      setTimeout(() => (nextButton.innerHTML = "Results >>"), 101);
+      setTimeout(() => (nextButton.innerHTML = "Results >>"), 500);
     }
-    const displayEndingPage = () => {
-      questionContainer.remove();
-      main.insertAdjacentHTML(
-        "afterbegin",
-        `<div class="container">
-      <h1>
-       YOU GOT ${score} OUT OF ${questions.length + 1} ! ${
-          score > (7 / 10) * (questions.length + 1)
-            ? "YOU ARE GREAT!"
-            : score > (4 / 10) * (questions.length + 1)
-            ? "YOU ARE.. MEH.."
-            : "YOU SUCK!"
-        }
-      </h1>
-     <a href="index.html"> <button class="end-button start-button">BACK TO THE MAIN PAGE</button> <a/>
-    </div>`
-      );
-      return;
-    };
+
     if (questionNumber === questions.length) {
       displayEndingPage();
       return;
