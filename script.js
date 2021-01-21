@@ -68,7 +68,7 @@ const firstStart = () => {
     }
   };
   timer();
-  setInterval(timer, 10);
+  setInterval(timer, 1000);
 
   const answering = function (element) {
     nextButton.style.animation = "come-out 0.5s ease";
