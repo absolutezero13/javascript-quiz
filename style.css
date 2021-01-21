@@ -26,7 +26,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 15rem 0 0 0;
+  margin: 10rem 0 0 0;
   animation: come-out 1s forwards;
 }
 .start-button {
@@ -62,7 +62,7 @@ button:focus {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 5rem 0 0 0;
+  margin: 3.5rem 0 0 0;
   line-height: 3rem;
   font-size: 1.1rem;
   animation: come-out 1s forwards;
@@ -122,6 +122,26 @@ button:focus {
   height: auto;
   width: auto;
 }
+
+.count-down {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-self: flex-end;
+  width: 90px;
+  height: 90px;
+  background: rgba(0, 0, 0, 0.432);
+  border-radius: 50%;
+  color: green;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 10px 0 0 10px;
+  border-bottom: 4px solid black;
+  box-shadow: 0 5px 6px black;
+}
+
 @keyframes hidden {
   0% {
     opacity: 1;
@@ -141,6 +161,7 @@ button:focus {
     opacity: 1;
   }
 }
+
 @media only screen and (max-width: 600px) {
   body {
     font-size: 70%;
@@ -160,7 +181,19 @@ button:focus {
   .question {
     font-size: 1rem;
   }
+  .count-down {
+    width: 70px;
+    height: 70px;
+  }
 }
+@media only screen and (max-width: 400px) {
+  .count-down {
+    width: 50px;
+    height: 50px;
+    font-size: 80%;
+  }
+}
+
 @media only screen and (max-width: 330px) {
   .question-container {
     margin-top: 2rem;
@@ -175,5 +208,10 @@ button:focus {
   }
   .question-tag {
     font-size: 1rem;
+  }
+  .count-down {
+    width: 30px;
+    height: 30px;
+    font-size: 30%;
   }
 }

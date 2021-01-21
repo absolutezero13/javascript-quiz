@@ -23,7 +23,11 @@ const displayFirstQuestion = () => {
     <p class="choice four">D. Var</p>
   </div>
   <button class="next-button">Next Question >></button>
-</div>`
+</div>
+    <div class="count-down">
+      <h2 class="minute"></h2>
+      <h2 class="second"></h2>
+   </div>`
   );
 };
 
@@ -43,6 +47,28 @@ const firstStart = () => {
   const optionB = document.querySelector(".two");
   const optionC = document.querySelector(".three");
   const optionD = document.querySelector(".four");
+  const countDown = document.querySelector(".count-down");
+  const minute = document.querySelector(".minute");
+  const second = document.querySelector(".second");
+  //---- TIMER ---- //
+  let minutes = 10;
+  let seconds = 0;
+  const timer = () => {
+    minute.innerHTML = `${minutes.toString().padStart(2, 0)}`;
+    second.innerHTML = `:${seconds.toString().padStart(2, 0)}`;
+    if (seconds === 0) {
+      minutes--;
+      second.innerHTML = ":00";
+      seconds = 60;
+    }
+    seconds--;
+    if (minutes === 0) {
+      minute.style.color = "red";
+      second.style.color = "red";
+    }
+  };
+  timer();
+  setInterval(timer, 10);
 
   const answering = function (element) {
     nextButton.style.animation = "come-out 0.5s ease";
@@ -67,8 +93,8 @@ const firstStart = () => {
     }
     setTimeout(() => {
       nextButton.style.animation = "come-out 0.5s ease";
-      nextButton.style.display = "inline";
-    }, 300);
+      nextButton.style.display = "flex";
+    }, 100);
     choice.forEach((e) => e.removeEventListener("click", answering));
   };
   choice.forEach(function (e) {
@@ -76,9 +102,9 @@ const firstStart = () => {
   });
   nextButton.addEventListener("click", () => {
     if (questionNumber === questions.length - 1) {
-      nextButton.innerHTML = "Results >>";
+      setTimeout(() => (nextButton.innerHTML = "Results >>"), 101);
     }
-    if (questionNumber === questions.length) {
+    const displayEndingPage = () => {
       questionContainer.remove();
       main.insertAdjacentHTML(
         "afterbegin",
@@ -95,6 +121,10 @@ const firstStart = () => {
      <a href="index.html"> <button class="end-button start-button">BACK TO THE MAIN PAGE</button> <a/>
     </div>`
       );
+      return;
+    };
+    if (questionNumber === questions.length) {
+      displayEndingPage();
       return;
     }
 
