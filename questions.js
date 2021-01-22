@@ -4,6 +4,8 @@ export const questions = [
   "Which is the correct way of choosing an element by their class name?",
   "You are given an array filled with letters. Which method chain gives you the exact same array?",
   "Which statement returns true?",
+  "Which method does not mutate the original array?",
+  "Which one of these words can be a valid variable name?",
 ];
 
 ///
@@ -33,6 +35,8 @@ export const answers = [
     "C. null === null",
     "D. undefined === false",
   ],
+  ["A. push()", "B. unshift()", "C. splice()", "D. slice()"],
+  ["A. return", "B. map", "C. catch", "D. function"],
 ];
 
-export const corrects = [0, 2, 1, 2];
+export const corrects = [0, 2, 1, 2, 3, 1];

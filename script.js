@@ -14,7 +14,7 @@ const displayFirstQuestion = () => {
     `<div class="question-container">
   <h2 class="question-tag">QUESTION 1</h2>
   <h3 class="question">
-    What is the keyword to define a variable that can be modified?
+    What is the keyword to define a variable that can be reassigned?
   </h3>
   <div class="choices">
     <p class="choice one">A. Function</p>
@@ -51,7 +51,7 @@ const firstStart = () => {
   const minute = document.querySelector(".minute");
   const second = document.querySelector(".second");
   //---- TIMER ---- //
-  let minutes = 10;
+  let minutes = questions.length * 1 + 1;
   let seconds = 0;
   const displayEndingPage = () => {
     questionContainer.remove();
