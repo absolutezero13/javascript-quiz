@@ -1,4 +1,4 @@
-# javascript-quiz
+# JS Quiz
 
 A Javascript fundamentals quiz written with vanilla Javascript.
 
