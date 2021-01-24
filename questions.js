@@ -7,6 +7,7 @@ export const questions = [
   "Which statement returns true?",
   "Which method does not mutate the original array?",
   "Which one of these words can be a valid variable name?",
+  "What would be the output of this? ``console.log((7 - '7') , (7 + '7'))``",
 ];
 
 ///
@@ -38,9 +39,10 @@ export const answers = [
   ],
   ["A. push()", "B. unshift()", "C. splice()", "D. slice()"],
   ["A. return", "B. map", "C. catch", "D. function"],
+  ["A. 0 , 14", "B. NaN , 14", "C. 0 , 77", "D. NaN , NaN"],
 ];
 
-export const corrects = [0, 2, 1, 2, 3, 1];
+export const corrects = [0, 2, 1, 2, 3, 1, 2];
 
 export const firstQuestionHtml = `<div class="question-container">
 <h2 class="question-tag">QUESTION 1</h2>
