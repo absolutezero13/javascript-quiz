@@ -1,34 +1,20 @@
 "use strict";
-import { questions } from "./questions.js";
-import { answers } from "./questions.js";
-import { corrects } from "./questions.js";
+import {
+  questions,
+  answers,
+  corrects,
+  firstQuestionHtml,
+} from "./questions.js";
+
+// - Selecting Core Elements - //
 const main = document.querySelector(".main");
 const container = document.querySelector(".container");
 const startButton = document.querySelector(".start-button");
-let score = 0;
+export let score = 0;
 let questionNumber = 0;
-////////////////----------------------//////////////---------SELECTING QUESTIONS ---------//////
+
 const displayFirstQuestion = () => {
-  main.insertAdjacentHTML(
-    "afterbegin",
-    `<div class="question-container">
-  <h2 class="question-tag">QUESTION 1</h2>
-  <h3 class="question">
-    What is the keyword to define a variable that can be reassigned?
-  </h3>
-  <div class="choices">
-    <p class="choice one">A. Function</p>
-    <p class="choice two">B. Const</p>
-    <p class="choice i three ">C. Let</p>
-    <p class="choice four">D. Var</p>
-  </div>
-  <button class="next-button">Next Question >></button>
-</div>
-    <div class="count-down">
-      <h2 class="minute"></h2>
-      <h2 class="second"></h2>
-   </div>`
-  );
+  main.insertAdjacentHTML("afterbegin", firstQuestionHtml);
 };
 
 const firstStart = () => {
@@ -56,23 +42,21 @@ const firstStart = () => {
   const displayEndingPage = () => {
     questionContainer.remove();
     countDown.remove();
-    main.insertAdjacentHTML(
-      "afterbegin",
-      `<div class="container">
-    <h1>
-     YOU GOT <span class="score"> ${score} </span> OUT OF ${
-        questions.length + 1
-      } ! ${
-        score > (7 / 10) * (questions.length + 1)
-          ? "YOU ARE GREAT!"
-          : score > (4 / 10) * (questions.length + 1)
-          ? "YOU ARE.. MEH.."
-          : "YOU SUCK!"
-      }
-    </h1>
-   <a href="index.html"> <button class="end-button start-button">BACK TO THE MAIN PAGE</button> <a/>
-  </div>`
-    );
+    const lastPageHtml = `<div class="container">
+  <h1>  YOU GOT <span class="score"> ${score} </span> OUT OF ${
+      questions.length + 1
+    } ! ${
+      score > (7 / 10) * (questions.length + 1)
+        ? "YOU ARE GREAT!"
+        : score > (4 / 10) * (questions.length + 1)
+        ? "YOU ARE.. MEH.."
+        : "YOU SUCK!"
+    }
+</h1>
+<a href="index.html"> <button class="end-button start-button">BACK TO THE MAIN PAGE</button> <a/>
+</div>`;
+
+    main.insertAdjacentHTML("afterbegin", lastPageHtml);
     return;
   };
 

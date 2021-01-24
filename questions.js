@@ -1,4 +1,5 @@
 "use strict";
+
 export const questions = [
   "How do you make the function wait for one and a half seconds before its execution?",
   "Which is the correct way of choosing an element by their class name?",
@@ -40,3 +41,21 @@ export const answers = [
 ];
 
 export const corrects = [0, 2, 1, 2, 3, 1];
+
+export const firstQuestionHtml = `<div class="question-container">
+<h2 class="question-tag">QUESTION 1</h2>
+<h3 class="question">
+  What is the keyword to define a variable that can be reassigned?
+</h3>
+<div class="choices">
+  <p class="choice one">A. Function</p>
+  <p class="choice two">B. Const</p>
+  <p class="choice i three ">C. Let</p>
+  <p class="choice four">D. Var</p>
+</div>
+<button class="next-button">Next Question >></button>
+</div>
+  <div class="count-down">
+    <h2 class="minute"></h2>
+    <h2 class="second"></h2>
+ </div>`;
