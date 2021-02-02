@@ -8,6 +8,8 @@ export const questions = [
   "Which method does not mutate the original array?",
   "Which one of these words can be a valid variable name?",
   "What would be the output of this? ``console.log((7 - '7') , (7 + '7'))``",
+  "How do you check if an object has a certain property?",
+  "Which one is correct for a function that doesn't return anything?",
 ];
 
 ///
@@ -40,9 +42,21 @@ export const answers = [
   ["A. push()", "B. unshift()", "C. splice()", "D. slice()"],
   ["A. return", "B. map", "C. catch", "D. function"],
   ["A. 0 , 14", "B. NaN , 14", "C. 0 , 77", "D. NaN , NaN"],
+  [
+    "A. obj.hasProperty(prop)",
+    "B. obj.contains(prop)",
+    "C. obj.includes(prop)",
+    "D. obj.hasOwnProperty(prop)",
+  ],
+  [
+    "A. Function doesn't work. ",
+    "B. It works but its value is undefined.",
+    "C. It works but it causes a warning.",
+    "D. Function works like any other function.",
+  ],
 ];
 
-export const corrects = [0, 2, 1, 2, 3, 1, 2];
+export const corrects = [0, 2, 1, 2, 3, 1, 2, 3, 1];
 
 export const firstQuestionHtml = `<div class="question-container">
 <h2 class="question-tag">QUESTION 1</h2>
