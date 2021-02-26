@@ -7,3 +7,5 @@ A Javascript fundamentals quiz written with vanilla Javascript.
 - Results in the end.
 
 * Questions are written by me.
+
+You can add questions also.
