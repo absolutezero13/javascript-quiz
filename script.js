@@ -145,4 +145,4 @@ const firstStart = () => {
 
 startButton.addEventListener("click", firstStart);
 
-/////////////////////////////////////////////
+/////////New questions upcoming /////
