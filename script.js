@@ -81,7 +81,7 @@ const firstStart = () => {
   const timerCountDown = () => setInterval(timer, 1000);
   timerCountDown();
 
-  const answering = function (element) {
+  const answering = (element) => {
     nextButton.style.animation = "come-out 0.5s ease";
     nextButton.style.display = "inline";
     if (questionNumber === 0) {
@@ -108,7 +108,7 @@ const firstStart = () => {
     }, 100);
     choice.forEach((e) => e.removeEventListener("click", answering));
   };
-  choice.forEach(function (e) {
+  choice.forEach((e) => {
     e.addEventListener("click", answering);
   });
   nextButton.addEventListener("click", () => {
@@ -135,7 +135,7 @@ const firstStart = () => {
     };
     setTimeout(displayQuestion, 301);
 
-    choice.forEach(function (e) {
+    choice.forEach((e) => {
       e.addEventListener("click", answering);
     });
   });
@@ -145,4 +145,4 @@ const firstStart = () => {
 
 startButton.addEventListener("click", firstStart);
 
-/////////New questions upcoming /////
+/////////New questions upcoming /////////

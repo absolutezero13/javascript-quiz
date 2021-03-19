@@ -27,7 +27,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 10rem 0 0 0;
+  margin: 10rem 1rem 0 1rem;
   animation: come-out 1s forwards;
 }
 .start-button {
@@ -144,6 +144,10 @@ button:focus {
 }
 .score {
   color: rgb(116, 226, 102);
+}
+
+.green {
+  color: rgb(62, 247, 62);
 }
 
 @keyframes hidden {
