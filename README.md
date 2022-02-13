@@ -9,3 +9,5 @@ A Javascript fundamentals quiz written with vanilla Javascript.
 * Questions are written by me.
 
 You can add questions also.
+
+.
